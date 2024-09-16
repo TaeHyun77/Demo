@@ -1,0 +1,65 @@
+@font-face {
+    font-family: 'TTLaundryGothicB';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2403-2@1.0/TTLaundryGothicB.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+.board-insert-form {
+    font-family: 'TTLaundryGothicB';
+    width: 1024px;
+    margin: 50px auto;
+  }
+  
+  .board-insert-form h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  hr { 
+    margin-bottom: 50px; 
+    border: 1px solid #ccc;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  td {
+    padding: 10px;
+    font-size: 16px;
+    vertical-align: top;
+  }
+  
+  .input-field, .textarea-field {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .textarea-field {
+    resize: none;
+  }
+  
+  .button-container {
+    text-align: right;
+    padding-right: 10px;
+  }
+  
+  .submit-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .submit-button:hover {
+    background-color: #45a049;
+  }
