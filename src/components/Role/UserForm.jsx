@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from 'react'
+import './UserForm.css'
 
 export const UserForm = ({userInfo, updateUser, deleteUser}) => {
 
@@ -16,10 +17,10 @@ export const UserForm = ({userInfo, updateUser, deleteUser}) => {
     }
 
     return (
-        <div className="form">
-            <h2 className="join-title">[ {userInfo?.name} ]님의 정보</h2>
+        <div className="userInfoform">
+            <h2 className="userInfo-title">[ {userInfo?.name} ]님의 정보</h2>
 
-            <form className='join-form' onSubmit={(e) => onUpdate(e)}>
+            <form className='userInfo-form' onSubmit={(e) => onUpdate(e)}>
                 <div>
                     <label htmlFor='username'>username</label>
 
@@ -31,33 +32,6 @@ export const UserForm = ({userInfo, updateUser, deleteUser}) => {
                         required
                         readOnly
                         defaultValue={userInfo?.username}
-                    />
-                </div>
-
-                <div>
-                    <label htmlFor='password'>비밀번호</label>
-
-                    <input type="text"
-                        id='password'
-                        placeholder='password'
-                        name='password'
-                        autoComplete='password'
-                        required
-                        defaultValue={userInfo?.password}
-                    />
-                </div>
-
-                <div>
-                    <label htmlFor='role'>등급</label>
-
-                    <input type="text"
-                        id='role'
-                        placeholder='role'
-                        name='role'
-                        autoComplete='role'
-                        readOnly
-                        required
-                        defaultValue={userInfo?.role}
                     />
                 </div>
 
@@ -87,9 +61,15 @@ export const UserForm = ({userInfo, updateUser, deleteUser}) => {
                     />
                 </div>
 
-                <button type='submit' className='btn btn--form btn-join'>정보 수정</button>
+                <div>
+                <label htmlFor='role' style={{ marginTop: '20px' }}>
+                        등급 : {userInfo?.role === 'ROLE_USER' ? '일반 사용자' : '관리자'}
+                    </label>
+                </div>
 
-                <button type='button' className='btn btn--form btn-join'
+                <button type='submit' className='userInfoBtn userInfoBtn--form btn-userInfo'>정보 수정</button>
+
+                <button type='button' className='userInfoBtn userInfoBtn--form btn-userInfo'
                 onClick={ ()=>deleteUser(userInfo.username)}>회원 탈퇴</button> 
 
             </form>

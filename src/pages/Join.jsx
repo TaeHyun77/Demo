@@ -3,7 +3,6 @@ import Header from '../components/Header/Header'
 import JoinForm from '../components/Join/JoinForm'
 import * as auth from '../api/auth'
 import {useNavigate} from 'react-router-dom';
-import PostForm from '../Board/Form/PostForm';
 
 
 const Join = () => {

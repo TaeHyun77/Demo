@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { createContext, useContext } from 'react';
 import PostForm from './PostForm';
 import { useNavigate } from 'react-router-dom';  // navigate 추가
 import * as auth from '../../api/auth';  // auth 모듈 추가
 
-const Post11 = () => {
+const PostSaveContext = createContext();
+
+export const PostSaveProvider = ({children}) => {
 
     const navigate = useNavigate();  // useNavigate 훅 사용
 
@@ -30,18 +32,21 @@ const Post11 = () => {
         if (status === 200) {
             console.log(`게시글 작성 성공`)
             alert('게시글 작성 성공');  
-            navigate("/")
+            navigate("/post")
         } else {
             console.log(`게시글 작성 실패`)
             alert('게시글 작성 실패');  
+            navigate("/post")
         }
     }
 
   return (
     <>
-        <PostForm postSave={postSave}/>
+        <PostSaveContext.Provider value={postSave}>
+            {children}
+        </PostSaveContext.Provider>    
     </>
   )
 }
 
-export default Post11
+export const usePostSave = () => useContext(PostSaveContext);

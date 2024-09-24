@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 // api 객체 생성
 const api = axios.create();
 
+
 // 요청 인터셉터: 요청 시 accessToken을 자동으로 추가
 api.interceptors.request.use(
     (config) => {
@@ -38,7 +39,6 @@ api.interceptors.request.use(
           Cookies.set('accessToken', newAccessToken);
 
           console.log('Access token이 성공적으로 재발급되었습니다.');
-
   
           api.defaults.headers.common.Authorization = `Bearer ${newAccessToken}`;
           originalRequest.headers.Authorization = `Bearer ${newAccessToken}`;

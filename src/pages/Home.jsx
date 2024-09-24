@@ -1,6 +1,8 @@
 import React from 'react';
 import LoginContextConsumer from '../contexts/LoginContextConsumer';
 import Header from '../components/Header/Header';
+import plane from '../plane.jpg';
+
 
 const Home = () => {
 

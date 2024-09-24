@@ -1,17 +1,19 @@
 import React, { useEffect, useContext } from 'react';
-import './BoardInsertForm.css'
+import './PostForm.css'
 import Header from '../../components/Header/Header';
 import {useNavigate} from 'react-router-dom';
 import { LoginContext } from '../../contexts/LoginContextProvider';
+import { PostSaveProvider, usePostSave } from './PostSaveProvider';
+import { FaPen } from "react-icons/fa6";
 
-export const PostForm = ({postSave}) => {
 
-    useEffect(() => {
-        
-    }, [postSave]);
-      
+const PostForm = () => {
 
-    const onPostSave = (e) => {
+    const postSave = usePostSave();
+
+    console.log(postSave)
+
+    const onPost = (e) => {
 
         e.preventDefault(); // submit 기본 동작 방지
 
@@ -19,10 +21,11 @@ export const PostForm = ({postSave}) => {
 
         const title = form.title.value;
         const content = form.content.value;
+        const writer = userInfo?.name; 
 
-        console.log(title, content);
+        console.log(title, content, writer);
 
-        postSave( {title, content} );
+        postSave( {title, content, writer} );
     }
 
     const {isLogin, userInfo} = useContext(LoginContext);
@@ -37,15 +40,19 @@ export const PostForm = ({postSave}) => {
         }
     },)
 
-
     return (
 
         <div>
             <Header/>
             <div className='board-insert-form'>
-                <h1>게시글 등록</h1>
+                
+                <h1 className="heading-with-icon">
+                    <FaPen className="icon" />
+                    게시글 등록
+                </h1>
+
                 <hr/>
-                <form onSubmit={(e) => onPostSave(e)}>
+                <form onSubmit={(e) => onPost(e)}>
                     <table>
                         <tbody>
                         <tr>
@@ -69,7 +76,7 @@ export const PostForm = ({postSave}) => {
                                 id="writer"
                                 name="writer"
                                 className="input-field"
-                                value={userInfo?.name}
+                                defaultValue={userInfo?.name}
                                 required
                             />
                             </td>

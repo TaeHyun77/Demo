@@ -5,52 +5,50 @@
     font-style: normal;
   }
 
-.board-insert-form {
+  .board-insert-form {
     font-family: 'TTLaundryGothicB';
     width: 1024px;
     margin: 50px auto;
-  }
-  
-  .board-insert-form h1 {
+}
+
+.board-insert-form h1 {
     font-size: 28px;
     margin-bottom: 20px;
-  }
+}
 
-  hr { 
+hr { 
     margin-bottom: 50px; 
     border: 1px solid #ccc;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-  }
-  
-  td {
-    padding: 10px;
+}
+
+table {
+    width: 100%; 
+}
+
+td {
+    padding: 10px; 
     font-size: 16px;
-    vertical-align: top;
-  }
-  
-  .input-field, .textarea-field {
-    width: 100%;
-    padding: 8px;
+}
+
+.input-field, .textarea-field {
+    width: 100%; 
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
-  }
-  
-  .textarea-field {
+    box-sizing: border-box;
+}
+
+.textarea-field {
     resize: none;
-  }
-  
-  .button-container {
-    text-align: right;
-    padding-right: 10px;
-  }
-  
-  .submit-button {
+}
+
+.button-container {
+    text-align: right; 
+    margin-top: 20px; 
+}
+
+.submit-button {
     padding: 10px 20px;
     background-color: #4CAF50;
     color: white;
@@ -58,8 +56,21 @@
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-  }
-  
-  .submit-button:hover {
+    margin-right: 10px;
+}
+
+.submit-button:hover {
     background-color: #45a049;
-  }
+}
+
+.heading-with-icon {
+  display: flex;
+  align-items: center; /* 아이콘과 텍스트를 수평으로 맞춤 */
+  font-size: 28px;
+}
+
+.icon {
+  margin-right: 10px; 
+  font-size: 24px; 
+  vertical-align: middle; 
+}

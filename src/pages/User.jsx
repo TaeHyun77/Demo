@@ -4,26 +4,13 @@ import Header from '../components/Header/Header';
 import { UserForm } from '../components/Role/UserForm';
 import * as auth from '../api/auth';
 import { useNavigate } from 'react-router-dom';
+import { FaRegUser } from "react-icons/fa6";
 
 const User = () => {
-
     const [userInfo, setUserInfo] = useState();
-    
-    const [userList, setUserList] = useState([]);
 
     const { DeleteLogout, isLogin, roles } = useContext(LoginContext);
     const navigate = useNavigate();
-
-    const getUserList = async () => {
-        try {
-            const response = await auth.list();
-            const data = response.data;
-            console.log('Fetched userList:', data);
-            setUserList(data);
-        } catch (error) {
-            console.error('Failed to fetch user list:', error);
-        }
-    };
 
     const getUserInfo = async () => {
         if (!isLogin) {
@@ -80,7 +67,6 @@ const User = () => {
         console.log("roles:", roles);
         if (isLogin) {
             getUserInfo();
-            getUserList();
         }
     }, [isLogin, roles]);
     
@@ -89,8 +75,12 @@ const User = () => {
         <>
             <Header />
                 <div className='container'>
-                    <h1>User</h1>
-                    <UserForm userInfo={userInfo} updateUser={updateUser} deleteUser={deleteUser} ></UserForm>
+                <h1 style={{ marginBottom: '70px' }}>
+                    <FaRegUser style={{ verticalAlign: 'middle', marginRight: '10px' }} />
+                    User Information
+                </h1>      
+                
+                <UserForm userInfo={userInfo} updateUser={updateUser} deleteUser={deleteUser} ></UserForm>
                 </div>
         </>
     );

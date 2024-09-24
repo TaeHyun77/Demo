@@ -32,9 +32,9 @@ const Header = () => {
                   </>
                 :
                   <>
-                    <li>{userInfo?.username} 님 환영합니다 !!     |</li>
-                    <li><Link to="/post">게시판 |</Link></li>
-                    <li><Link to="/user">마이페이지 |</Link></li>
+                    <li style={{ color: '#4CAF50' }}> {userInfo?.username} 님 환영합니다 !!     </li>
+                    <li><Link to="/post">게시판 </Link></li>
+                    <li><Link to="/user">마이페이지 </Link></li>
                     <li><Link to="/admin">관리자</Link></li>
 
                     <li><button className='btn-logout' onClick={ () => logout() }>로그아웃</button></li>

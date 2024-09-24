@@ -8,10 +8,9 @@ const About = () => {
         <>
             <Header />
             <div className='container'>
-                <h1>About</h1>
+                <h1>About, 소개 페이지 !</h1>
                 <hr/>
-                <h2>소개 페이지</h2>
-                <LoginContextConsumer />
+                <p>회원가입 하여 게시판을 작성하고 여러 사용자와 소통해보아요</p>
             </div>
         </>
     )

@@ -40,6 +40,11 @@ header {
     font-family: 'TTLaundryGothicB';
 }
 
+.util ul li {
+    padding: 0px 20px;
+  }
+  
+
 
 /* 버튼도 다른 링크처럼 보이도록 스타일 추가 */
 .btn-logout {
